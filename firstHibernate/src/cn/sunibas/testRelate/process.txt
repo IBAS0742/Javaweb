@@ -1,0 +1,21 @@
+Statement for table structure 表结构说明
+Employee                     | Dept
+Id      empName     deptId   | empId  empName
+                        |___key___|
+
+
+1. create Employee class bean
+1. 创建 Employee 类
+2. create Dept class bean
+2. 创建 Dept 类
+3. relate (many employee r_to one dept)
+3. 关系（多个 employee 对应于 一个 dept）
+4. create map file Employee.hbm.xml and Dept.hbm.xml
+4. 创建映射文件
+5. add to hibernate.cfg.xml (OK,now it is test not to remend that. )
+5. 添加映射关心到 hibernate.cfg.xml
+6. new one test to test it.
+6. 新建测试
+
+
+

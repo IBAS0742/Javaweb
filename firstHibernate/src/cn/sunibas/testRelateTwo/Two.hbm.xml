@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.sunibas.testRelateTwo">
+	
+	<class name="Two" table="t_r_two">
+		
+		<!-- 主键 ，映射-->
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		
+		<!-- 非主键，映射 -->
+		<!--<property name="empName"></property>-->
+        <!--
+            ones 是Two中定义的属性，t_r_one是One对应于数据库中的表的名称
+            two_id 是当前表中id在One表中的外键的名称
+            One 指定该外键为One表的外键
+            这里是定义对应关系，仅仅是声明该类中有这么一个属，而表中并不存在该字段
+            （另一个tip其他表的外键就是这个表的主键，因为只有主键才能作为他表外键）
+            这里仅仅是一种关系的声明！！！！
+        -->
+        <set name="ones" table="r_t_one">
+            <key column="two_id"></key>
+            <one-to-many class="One"></one-to-many>
+        </set>
+
+	</class>
+
+</hibernate-mapping>

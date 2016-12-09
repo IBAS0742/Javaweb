@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="firstHibernate:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/firstHibernate_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="firstHibernate/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="firstHibernate" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/jta-1.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/hibernate3.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/antlr-2.7.6.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/dom4j-1.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/slf4j-api-1.6.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/javassist-3.12.0.GA.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/commons-collections-3.1.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/mysql-connector-java-5.1.12-bin.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Hibernate_lib/hibernate-jpa-2.0-api-1.0.0.Final.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../junit-4.10.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

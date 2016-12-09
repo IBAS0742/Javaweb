@@ -1,0 +1,13 @@
+#表结构
+
+1. create One class bean
+2. create Two class bean
+3. relate (many One r_to one Two)
+4. create map file One.hbm.xml and Two.hbm.xml
+5. add to hibernate.cfg.xml (OK,now it is test not to remend that. )
+6. new one test to test it.
+
+
+我的瞎比比
+一个One对应一个Two，因此一个One类中的Two为简单属性
+而一个Two对应多个One，所有Two类中的One为集合类型

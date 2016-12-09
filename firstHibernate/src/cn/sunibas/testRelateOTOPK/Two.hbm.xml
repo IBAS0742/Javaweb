@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.sunibas.testRelateOTOPK">
+	
+	<class name="Two" table="t_Two">
+		
+		<!--
+		    主键 ，映射
+		    如果不谢column表示列名和属性一致
+		    forigen ： 使用外键作为主键(Use foreign key as primary key)
+		-->
+		<id name="id">
+			<generator class="foreign">
+                <param name="property">one</param>
+            </generator>
+		</id>
+		
+		<!-- 非主键，映射 -->
+        <property name="name" length="20"/>d
+
+        <one-to-one name="one" class="One" constrained="true"  cascade="save-update">
+        </one-to-one>
+
+	</class>
+
+</hibernate-mapping>

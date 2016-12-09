@@ -1,0 +1,16 @@
+表结构(table structure)
+t_car
+id  name  number
+            |wheel{number}
+
+
+1.创建Car和wheel类
+1.Create classes (Car and Wheel)
+2.创建映射文件
+2.Create mapping file.
+3.创建测试
+3.Create test.
+
+说明(statement)
+#1.这里有两个类但是仅仅有一个表
+#1.Here create two classes , but in database there is on table.

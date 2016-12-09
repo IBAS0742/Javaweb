@@ -1,0 +1,12 @@
+测试内容，数据库的一对一关系
+
+表结构
+One                      Two
+id         Name          id  Name    o_id
+ |_______________外键(key)_____________|
+对应Two的o_id                         对应one的id
+
+
+1.  create class One and Two
+2.  create mapping file One.hbm.xml and Two.hbm.xml
+3.  create test class to test

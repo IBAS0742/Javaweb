@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.sunibas.testRelateTwo">
+	
+	<class name="One" table="t_r_one">
+		
+		<!-- 主键 ，映射-->
+		<id name="id">
+			<generator class="native"/>
+		</id>
+		
+		<!-- 非主键，映射 -->
+		<!--<property name="empName"></property>-->
+        <!--
+            two 为该表中 two_id 的外键对应的表
+            two_id 为确实存在于数据表 one 中的一个属性
+            Two 为指定该属性在javabean中的存储结构
+        -->
+        <many-to-one name="two" column="two_id" class="Two"></many-to-one>
+
+	</class>
+
+</hibernate-mapping>

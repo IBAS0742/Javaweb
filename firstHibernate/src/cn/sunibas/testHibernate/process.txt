@@ -1,0 +1,9 @@
+1. create mytable class bean
+2. create map file mytable.hbm.xml
+3. add to hibernate.cfg.xml (OK,now it is test not to remend that. )
+4. new one test to test it.
+
+1.创建 mytable 类
+2.编写映射文件
+3.添加映射关心到 hibernate.cfg.xml
+4.新建测试进行测试

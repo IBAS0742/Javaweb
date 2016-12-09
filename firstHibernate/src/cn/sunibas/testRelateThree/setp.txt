@@ -1,0 +1,13 @@
+test for many to many
+1.  creat tow class (RTone,RTtwo)
+2.  creat mapping file (RTone.hbm.xml RTtwo.hbm.xml)
+3.  create test class to test
+
+
+
+##table struct
+t_rtone         t_rttwo         t_re_rt
+<id label>      <id label>      <oid tid>
+  |               |_____key_______|   |
+  |_____________________key___________|
+
