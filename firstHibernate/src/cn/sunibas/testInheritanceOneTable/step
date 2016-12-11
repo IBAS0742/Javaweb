@@ -1,0 +1,15 @@
+table structure
++----+----------------------------------------+-------+----------+----------+
+| id | type_                                  | name  | feedFish | feedBone |
++----+----------------------------------------+-------+----------+----------+
+|  1 | cn.sunibas.testInheritanceOneTable.Cat | kitty |       12 |     NULL |
+|  2 | cn.sunibas.testInheritanceOneTable.Dog | Tomr  |     NULL |        3 |
+|  3 | cat                                    | kitty |       12 |     NULL |
+|  4 | dog                                    | Tomr  |     NULL |        3 |
++----+----------------------------------------+-------+----------+----------+
+
+
+#1.create class cat and dog and animal class
+#2.create mapping file Animal.hbm.xml
+#3.create test method
+

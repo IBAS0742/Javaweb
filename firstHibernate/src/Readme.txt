@@ -36,7 +36,23 @@ Say something for the package "cn.sunibas.*"
     #This is a similar example , but two table related by another table.
     #和以上例子相似，只是将表关系保存到另一个表
 
-#3package(包) cn.sunibas.testComponent
+#3.package(包) cn.sunibas.testComponent
     In this package , I will show a example about how to make two related classes to be store in a table.
     这里将讲解怎样将两个相关的类保存到一个数据表中。（组件映射）
+
+#4.package(包) cn.sunibas.testInheritance    (not recommend)
+    In this package , I test to write a class which is inherited from another class.
+    这个包中将测试继承关系的类。
+    (All the subclass are according to a table.每个类对应于一张表。)
+    #cn.sunibas.testInheritanceOneTable
+    #All class is according to one table.所有的类对应于一张表。
+    ###########
+    #cn.sunibas.testInheritanceThreeTable   (not recommend)
+    #All class is according to a table and superclass also have one table.(每个类包括父类都有一张表。)
+    ###########
+    #cn.sunibas.testInheritanceUnionTable
+    #All class is accordiong to one table.(除了父类每个类对应一张表。)
+
+
+
 

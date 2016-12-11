@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Here package is not required , but if you set it a value , the class used as follow is defaulting under the package -->
+<!-- 这里的 package 属性不是必要的，但是如果设置了，那么下面的用到的类默认是在这个包下的。 -->
+<hibernate-mapping package="cn.sunibas.testInheritanceThreeTable">
+
+	<class name="Animal" table="t_ani">
+		
+		<!-- 主键 ，映射-->
+        <!-- primary key mapping -->
+        <!-- name is correspond to the table in the database . -->
+		<id name="id" column="id">
+            <!-- 设置自增，其中native为自增的一种方式 -->
+            <!-- Setting the auto increate , the "native" is one of the setting (method) . -->
+			<generator class="native"/>
+		</id>
+
+		<!-- 非主键，映射 -->
+        <!-- not primary key mapping -->
+		<property name="name" column="name"></property>
+
+        <joined-subclass name="Cat" table="t_cat">
+            <key column="cat_id">
+            </key>
+            <property name="feedFish"></property>
+        </joined-subclass>
+
+        <joined-subclass name="Dog" table="t_dog">
+            <key column="dog_id"></key>
+            <property name="feedBone"></property>
+        </joined-subclass>
+		
+	</class>
+
+</hibernate-mapping>
+

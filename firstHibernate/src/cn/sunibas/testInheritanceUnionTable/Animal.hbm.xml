@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Here package is not required , but if you set it a value , the class used as follow is defaulting under the package -->
+<!-- 这里的 package 属性不是必要的，但是如果设置了，那么下面的用到的类默认是在这个包下的。 -->
+<hibernate-mapping package="cn.sunibas.testInheritanceUnionTable">
+
+    <!-- 这里运行时会创建 t_ani 表，但是这个表没作用，可以使用 abstract="true" 禁止它生成 -->
+    <!-- If running is progress , the table t_ani will create but it is unnecessary ,
+         so you can set abstract as true to avoid it created. -->
+	<class name="Animal" table="t_ani" abstract="true">
+		
+		<!-- 主键 ，映射-->
+        <!-- primary key mapping -->
+        <!-- name is correspond to the table in the database . -->
+		<id name="id" column="id">
+            <!-- For using the element union-subclass, auto created is not allow. -->
+            <!-- 使用了 union-subclass 元素后，这里不能使用自增长。 -->
+			<generator class="assigned"/>
+		</id>
+
+		<!-- 非主键，映射 -->
+        <!-- not primary key mapping -->
+		<property name="name" column="name"></property>
+
+        <union-subclass name="Cat" table="t_cat">
+            <property name="feedFish"></property>
+        </union-subclass>
+
+        <union-subclass name="Dog" table="t_dog">
+            <property name="feedBone"></property>
+        </union-subclass>
+		
+	</class>
+
+</hibernate-mapping>
+

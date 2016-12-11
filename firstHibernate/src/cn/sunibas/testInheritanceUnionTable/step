@@ -1,0 +1,38 @@
+mysql> select * from t_ani;select * from t_cat;select * from t_dog;
+Empty set (0.01 sec)
+
++----+-------+----------+
+| id | name  | feedFish |
++----+-------+----------+
+|  1 | kitty |       12 |
++----+-------+----------+
+1 row in set (0.00 sec)
+
++----+------+----------+
+| id | name | feedBone |
++----+------+----------+
+|  2 | Tomr |        3 |
++----+------+----------+
+1 row in set (0.00 sec)
+####################################################################
+mysql> select * from t_ani;select * from t_cat;select * from t_dog;
+ERROR 1146 (42S02): Table 'forstudy.t_ani' doesn't exist
++----+-------+----------+
+| id | name  | feedFish |
++----+-------+----------+
+|  1 | kitty |       12 |
++----+-------+----------+
+1 row in set (0.00 sec)
+
++----+------+----------+
+| id | name | feedBone |
++----+------+----------+
+|  2 | Tomr |        3 |
++----+------+----------+
+
+
+#1.create class cat and dog and animal class
+#2.create mapping file Animal.hbm.xml
+#3.create test method
+
+

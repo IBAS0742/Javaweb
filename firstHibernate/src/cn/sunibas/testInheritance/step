@@ -1,0 +1,16 @@
+table structure
++----+-------+-------+
+| id | name  | index |
++----+-------+-------+
+|  1 | kitty |    12 |
++----+-------+-------+
+
+
+#1.create class cat and animal class
+#2.create mapping file Cat.hbm.xml
+#3.create test method
+
+
+TIP:
+The parent class properties can be write as child's properties at the hbm.xml directly.
+父类的字段在xml配置文件中能值直接的在子类中配置，使用 property 元素。
