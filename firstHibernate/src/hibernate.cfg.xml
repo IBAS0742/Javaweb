@@ -24,8 +24,7 @@
 		<!--<property name="hibernate.format_sql">true</property>-->
 		<!--&lt;!&ndash; 2.3 自动建表  &ndash;&gt;-->
 		<property name="hibernate.hbm2ddl.auto">update</property>
-		
-		
+
 		<!-- 3. 加载所有映射 -->
 		<mapping resource="cn/sunibas/testHibernate/mytable.hbm.xml"/>
 

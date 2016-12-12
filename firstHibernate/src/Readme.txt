@@ -53,6 +53,73 @@ Say something for the package "cn.sunibas.*"
     #cn.sunibas.testInheritanceUnionTable
     #All class is accordiong to one table.(除了父类每个类对应一张表。)
 
+#5.package(包) cn.sunibas.testQueryOne
+    In this package, I will test some query (HQL) fro single table testing.(这里我将测试一些单表hql查询。)
+    ###########
+    #cn.sunibas.testQueryTwo
+    #In this package, I will test some query (HQL) fro multi-table testing.(这里我将测试一些多表联合hql查询。)
+    ###########
+    #cn.sunibas.testQueryThree
+    #In this package, I will test some query statement which I define at the xml.(这里测试一些在xml中定义的hql语句。)
+    ###########
+    #cn.sunibas.testQueryFour
+    #In this package, I will test some other query (cri).(这里将测试其他查询)
+    ###########
+    #cn.sunibas.testQueryFour
+    #In this package, I will test some paging query (cri).(这里将测试分页查询)
+
+
+
+#About Connection pool (关于连接池)
+数据库中(IN DATABASE)
+mysql> show processlist; -- 可以显示连接数
++----+------+-----------+----------+---------+------+----------+------------------+
+| Id | User | Host      | db       | Command | Time | State    | Info             |
++----+------+-----------+----------+---------+------+----------+------------------+
+|  2 | root | localhost | forstudy | Query   |    0 | starting | show processlist |
++----+------+-----------+----------+---------+------+----------+------------------+
+1 row in set (0.00 sec)
+
+#以下配置 C3P0 的一些配置项,应该放在配置映射文件前
+    <property name="hibernate.connection.driver_class">
+        org.hibernate.connection.C3P0ConnectionProvider         <!-- 配置驱动 -->
+    </property>
+    <property name="hibernate.c3p0.max_size">4</property>         <!-- 配置最大连接数 -->
+    <property name="hibernate.c3p0.min_size">2</property>         <!-- 配置最小连接数 -->
+    <property name="hibernate.c3p0.timeout">5000</property>         <!-- 配置连接超时时间 -->
+    <property name="hibernate.c3p0.max_statements">10</property>         <!-- 配置一次最多查询语句 -->
+    <property name="hibernate.c3p0.idle_test_period">30000</property>         <!-- 配置测试连接时间<<<1>>> -->
+    <property name="hibernate.c3p0.acquire_increment">2</property>         <!-- 配置一次增加连接数<<<2>>> -->
+    <!-- 以下为缓存配置 -->
+    <class-cache class="类名" usage="缓存策略"></class-cache>              <!-- 缓存对象 -->
+    <collection-cache collection="类名.集合属性" usage="缓存策略"></collection-cache>        <!-- 集合缓存<<<3>>> -->
+    <!-- ###### 以下为注解 ###### -->
+    <!-- <<<1>>>
+        这里假设测试连接时间为1min,用途是:
+        当一个连接被占用后,如果没有被释放,
+        同时,连接时间又极长,
+        并且连接过程中没有任何查询,
+        那么可能发生的问题是,连接会失效,
+        这里的设置就是,每过1min发送一个无意义的查询语句,
+        使连接一直有效.
+     -->
+    <!-- <<<2>>>
+        假如,当前最大连接数为8,最小为2,一次增加连接数为4,
+        那么查询开始时会先申请2个连接,然后如果连接不够就申请4个(即当前有6个),
+        如果还是不够就继续申请4个,但是6 + 4 > 8,只能再申请2个,
+        这里的一次申请,不是申请了就一定用到,只是规定不够的时候一次申请多少.
+     -->
+    <!-- <<<3>>>
+        其中的 collection 为类中的集合属性,例如类结构如下时:
+        class A {
+            private int aid;
+            private List<B> bs;
+            ...
+        }
+        collection 就可以写 A.bs.
+        同时必须为 B 写缓存策略.即
+        <class-cache class="B" usage="缓存策略"></class-cache>
+     -->
 
 
 
