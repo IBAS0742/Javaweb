@@ -1,0 +1,31 @@
+1. create mytable class bean
+2. create map file mytable.hbm.xml
+3. add to hibernate.cfg.xml (OK,now it is test not to remend that. )
+4. new one test to test it, and insert some data.
+#################################################
+    mysql> show tables;
+    +--------------------+
+    | Tables_in_forstudy |
+    +--------------------+
+    | t_mytable          |
+    +--------------------+
+    1 row in set (0.00 sec)
+
+    mysql> select * from t_mytable;
+    +------+------------+
+    | col1 | col2       |
+    +------+------------+
+    |    1 | something0 |
+    |    2 | something1 |
+    |    3 | something2 |
+    |    4 | something3 |
+    |    5 | something4 |
+    |    6 | something5 |
+    |    7 | something6 |
+    |    8 | something7 |
+    |    9 | something8 |
+    |   10 | something9 |
+    +------+------------+
+    10 rows in set (0.00 sec)
+#################################################
+5. new one test to test query .

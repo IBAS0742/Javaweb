@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<!-- Here package is not required , but if you set it a value , the class used as follow is defaulting under the package -->
+<!-- 这里的 package 属性不是必要的，但是如果设置了，那么下面的用到的类默认是在这个包下的。 -->
+<hibernate-mapping package="cn.sunibas.testQueryOne">
+
+	<!-- 这里的 mytable 是上面定义包下的，如果未定义包，这里应该带上包名 -->
+    <!-- The "mytable" is declared under the package which defined upon , and if the package is not defined , here should write with the package name . -->
+    <!-- table1 是对应于数据库的表名，没有填写默认和类名一致 -->
+    <!-- The "table1“ is match  -->
+	<class name="cn.sunibas.testQueryOne.mytableCp" table="t_mytable">
+		
+		<!-- 主键 ，映射-->
+        <!-- primary key mapping -->
+        <!-- name is correspond to the table in the database . -->
+		<id name="col1" column="col1">
+            <!-- 设置自增，其中native为自增的一种方式 -->
+            <!-- Setting the auto increate , the "native" is one of the setting (method) . -->
+			<generator class="native"/>
+		</id>
+		
+		<!-- 非主键，映射 -->
+        <!-- not primary key mapping -->
+		<property name="col2" column="col2"></property>
+		
+	</class>
+    <query name="getAll">
+        from cn.sunibas.testQueryOne.mytableCp
+    </query>
+    <!-- 这里的一些符号要转义(Some symbols should be change to Escape Sequence .) -->
+    <query name="getWhere">
+        from cn.sunibas.testQueryOne.mytableCp where col1 &lt; ?
+    </query>
+    <!-- CDATA 段中的符号不需要转义(CDATA session can use some symbols not to Escape.) -->
+    <query name="getWhere1">
+        <![CDATA[
+            from cn.sunibas.testQueryOne.mytableCp where id<?
+        ]]>
+    </query>
+
+</hibernate-mapping>
