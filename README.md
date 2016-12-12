@@ -5,4 +5,5 @@
 
 ###i)firstHibernate
 There are some examples about how to use hibernate, but there are only unit tests.
-这里是一下hibernate的例子，仅仅是一下单元测试。
+这里是一下hibernate的例子，仅仅是一些单元测试。
+
