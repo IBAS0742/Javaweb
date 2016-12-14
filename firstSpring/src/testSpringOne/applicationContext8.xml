@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- p:属性(前面set注入的简化版) -->
+    <bean id="cft" class="testSpringOne.ClassForTest" p:record="p namespace record">
+    </bean>
+
+    <!--
+        autowrite="byName" 根据名称自动装配,
+        其中OverCFT中需要一个 ClassForTest 对象,
+        并且属性名为 cft 与上面 id="cft" 是同一类型的.
+        并且容器中只能有一个
+    -->
+    <bean id="ocft" class="testSpringOne.OverCFT" autowire="byName"></bean>
+    <bean id="ocft1" class="testSpringOne.OverCFT" autowire="byType"></bean>
+
+</beans>
+
+
+
