@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpringAndJdbc:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/SpringAndJdbc_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SpringAndJdbc-Hibernate-TM/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpringAndJdbc-Hibernate-TM" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="application" name="spring-core" />
+          <element id="library" level="application" name="spring-orm" />
+          <element id="library" level="application" name="spring-jdbc" />
+          <element id="file-copy" path="$APPLICATION_HOME_DIR$/plugins/testng/lib/testng.jar" />
+          <element id="library" level="application" name="Hibernate_lib" />
+          <element id="library" level="application" name="spring-aop" />
+          <element id="library" level="application" name="struct-jar" />
+          <element id="library" level="application" name="spring-web" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>

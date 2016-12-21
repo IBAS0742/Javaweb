@@ -1,0 +1,27 @@
+
+    1.创建Entity、Dao、Service对象
+    2.创建Entity的映射文件
+    3.创建bean.xml文件 (其中 0 配置为必要配置，其他为多选一配置)
+        ->0.这里要先配置事物管理（在bean.xml中的 0 配置）
+        ->1.创建hibernate.cfg.xml文件(bean.xml中完成 1）即可)
+                ->其中 通过配置session的创建方式为线程方式创建session对象
+                才能在 TestDao 中使用 sessionFactory.getCurrentSession() 获取当前线程中的session
+                但是，在hibernate.cfg.xml中不必也不能配置该属性，否则报错
+            ->在bean.xml中配置hibernate.cfg.xml配置文件
+            ->创建测试
+        ->2.将1中的hibernate配置修改为spring配置
+            ->配置dataSource (bean.xml 中的 2) 这里使用spring来创建出c3p0连接池，并注释去hibernate配置中的连接池
+                并在 bean.xml 中的 2 中添加dataSource配置
+        ->3.将hibernate.cfg.xml中的所有配置转移到bean.xml中
+            ->1.将configLocation配置注释去
+            ->2.添加hibernateProperties配置(hibernate基本配置)
+            ->3.添加mappingLocations(映射文件)
+            ->3.1或者配置mappingDirectoryLocations（与3的区别是，这里只要写映射文件的路径，即省去最后的文件名）
+
+引用包
+    Hibernate_lib
+    junit-4.10
+    spring-aop
+    spring-core
+    spring-jdbc
+    spring-orm

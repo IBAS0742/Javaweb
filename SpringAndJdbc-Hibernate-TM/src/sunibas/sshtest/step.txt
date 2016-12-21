@@ -1,0 +1,19 @@
+copy files
+    {
+         TestDao
+         TestEntity
+         TestEntity.hbm.xml (修改mapping的package)
+         TestRun
+         TestService
+     }
+from sunibas.hibernate
+在bean.xml中添加映射文件    (将映射文件中的auto-import设置为"false")
+配置web.xml文件            (struts配置和spring配置)
+创建action，添加struts.xml
+
+
+多引用的jar包
+    spring-web
+    struct-jar
+
+
