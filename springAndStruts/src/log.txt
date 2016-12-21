@@ -1,0 +1,21 @@
+编写顺序(order by created time)
+
+#testAction\testDao\testServices
+#testProxyOne   (unit test)
+    1.编写接口类（因为在代理中使用到了接口，固这里为必要的步骤）
+    2.编写实现接口类
+    3.编写代理
+    4.编写测试方法
+    -->目的：测试并理解使用代理生成对象并对方法进行拦截
+#testAOP        (unit test)
+    1.编写接口类（可有可无）
+    2.编写实现接口类
+    3.编写代理方法 （AOPmethod）
+    4.编写xml文件（开启扫描和自动配置代理）
+    5.添加注解(AOPmethod 中添加 Aspect和Pointcut(配置拦截方法)和Before和After)
+    5.编写测试方法
+    -->目的：测试并理解使用代理生成对象并对方法进行拦截
+#
+#
+#
+#

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        table {
+            background-color : #f3f3e4;
+            border : 1px solid;
+            border-radius: 10px;
+            padding : 9px;
+        }
+        td {
+            background-color: #f8f7f0;
+            border: 1px solid  #f3f3e4;
+            border-radius: 2px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>javaweb通用配置文件</h1>
+    <table>
+        <thead>
+            <tr>
+                <td>
+                    OO
+                </td>
+                <td>
+                    文件描述
+                </td>
+                <td>
+                    下载
+                </td>
+            </tr>
+        </thead>
+        <tbody id = "tbody">
+        </tbody>
+    </table>
+    <script>
+        var dic = [];
+        var baseLink = "http://www.src.sunibas.cn/javaweb/common/";
+
+        window.onload = function(){
+            addToDIc(
+                    "spring和struts组合时的xml配置",
+                    "1.web.xml"
+            );
+
+            outInHtml();
+        }
+
+        function addToDIc(a,b){
+            var cdic = {
+                src : a,
+                link : b
+            };
+            dic.push(cdic);
+        };
+        function outInHtml(){
+            dic.forEach(function(i,j){
+                var tr = getHtmlObj("tr"),
+                    tdind = getHtmlObj("td"),
+                    tdscr = getHtmlObj("td"),
+                    tdlink = getHtmlObj("td"),
+                    alink = getHtmlObj("a");
+                tdind.innerText = j;
+                tdscr.innerText = i.src;
+                alink.href = baseLink + i.link;
+                alink.innerText = "下载";
+                tbody.appendChild(tr);
+                tr.appendChild(tdind);
+                tr.appendChild(tdscr);
+                tr.appendChild(tdlink);
+                tdlink.appendChild(alink);
+            });
+        };
+        function getHtmlObj(name){
+            return document.createElement(name);
+        }
+    </script>
+</body>
+</html>

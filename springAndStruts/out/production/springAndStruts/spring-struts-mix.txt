@@ -1,0 +1,21 @@
+编写spring和struts配合运行的测试程序步骤：
+
+0.web.xml配置
+    1. struts配置
+        配置过滤器
+    2. spring 配置
+        配置bean*.xml即IOC配置文件
+            其中  /WEB-INF/classes/bean-*.xml
+            /WEB-INF/classes 为程序运行后，tomcat解压缩包后的src放置目录
+            bean-*.xml为配置文件名字（适用通配符）
+        org.springframework.web.context.ContextLoaderListener
+            监听器，必备。
+1.编写 (ITestDaoOne[理论上应该有这么一个]) TestDaoOne TestServiceOne TestActionOne
+2.编写 (原谅我喜欢C#属性这个概念)
+    bean-dao.xml     ------ 将dao单例注入到IOC容器中
+    bean-service.xml ------ 将dao注入到service中的dao属性中，并将service单例注入到IOC容器中
+    bean-action.xml  ------ 将service注入到action属性中，并将action注入到IOC容器中
+    struts.xml       ------ 这里和单独使用struts的差别在于，将action标签中的class修改为IOC容器中的action对象
+
+
+
